@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('githubAngularjsApp', ['ngResource', 'ngRoute', 'ui.bootstrap', 'toastr']);
+    .module('githubAngularjsApp', ['ngResource', 'ngRoute', 'ui.bootstrap']);
 
 })();
