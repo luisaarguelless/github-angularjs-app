@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Consultas</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>lenguaje</th>
+                    <th>branch por defecto</th>
+                    <th>url git</th>
+                    <th>nombre</th>
+                    <th>descripcion</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="repositorio in consultas.repositorios">
+                <td>{{repositorio.language}}</td>
+                <td>{{repositorio.default_branch}}</td>
+                <td>{{repositorio.git_url}}</td>
+                <td>{{repositorio.name}}</td>
+                <td>{{repositorio.description}}</td>
+            </tr>
+        </table>
+    <a href="#/">regresar</a>
+</div>
