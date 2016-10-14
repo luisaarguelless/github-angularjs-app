@@ -1,0 +1,34 @@
+<div class="container">
+	<h1>Consultas</h1>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="form-group">
+				<label class="label-control">Ordenado Por</label>
+				<select class="form-control" 
+					ng-model="consultas.orderBy" ng-options="option as option.value for option in consultas.orderOptions track by option.key">						
+				</select>
+			</div>
+		</div>
+		<!-- col -->
+	</div>
+	<!-- row -->
+	<table class="table">
+		<thead>
+			<tr>
+			<th ng-repeat="option in consultas.orderOptions ">{{option.value}}</th>	
+			</tr>
+		</thead>
+		<tr ng-repeat="repositorio in consultas.repositoriosFiltrados | orderBy : consultas.orderBy.key">
+			<td>{{repositorio.language}}</td>
+			<td>{{repositorio.default_branch}}</td>
+			<td>{{repositorio.git_url}}</td>
+			<td>{{repositorio.name}}</td>
+			<td>{{repositorio.description}}</td>
+		</tr>
+	</table>
+	<div uib-pagination total-items="consultas.getTotalRepositorios()" ng-model="consultas.currentPage" boundary-links="true"
+		ng-change="consultas.pageChanged()"></div>
+	<div>
+		<a href="#/">regresar</a>
+	</div>
+</div>
