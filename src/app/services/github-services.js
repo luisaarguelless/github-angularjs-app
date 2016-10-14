@@ -8,7 +8,7 @@
 
     function GithubServices($resource){
         return $resource('https://api.github.com/users/:user/repos',{},{
-            get : {method: 'GET', params: { page: '@page', per_page : '5'}, isArray: true}
+            get : {method: 'GET', params: { }, isArray: true}
         });
     }
    
